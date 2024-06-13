@@ -12,8 +12,8 @@ services:
       POSTGRES_PORT: 5432
     volumes:
       - database_data:/var/lib/postgresql/data
-      - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
-      - ./popul_tables.sql:/docker-entrypoint-initdb.d/popul_tables.sql
+      - ./db_configs/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+      - ./db_configs/popul_tables.sql:/docker-entrypoint-initdb.d/popul_tables.sql
     ports:
       - "5432:5432"
     restart: always
